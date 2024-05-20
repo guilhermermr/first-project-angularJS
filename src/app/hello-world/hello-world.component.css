@@ -1,0 +1,87 @@
+*{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+::ng-deep * {
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: #1f1f1f;
+}
+
+.container{
+    max-width: 1200px;
+    margin: 0 auto;
+
+    &.main{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 100vh;
+        color: #fff;
+        font-weight: bold;
+
+        h1{            
+            font-size: 3.125rem;
+        }
+
+        h2{
+            font-size: 1.5625rem;
+            color: #9E2F9E;
+        }
+
+        p{
+            font-size: 1.25rem;
+            margin-top: 20px;
+
+            a{
+                text-decoration: none;
+                color: #fff;
+
+                &:hover{
+                    color: #2f979e;
+                    animation: hover ease-in-out 2000ms;
+                }
+            }
+        }
+    }
+
+    @media screen and (max-width:1200px){
+        margin: 0 50px;
+    }
+}
+
+.drop-text, .drop-text-2, .drop-text-3 {
+    animation: drop-in var(--duration) ease var(--delay) backwards;
+}
+
+.drop-text {
+    --duration: 1s;
+    --delay: 200ms;
+    --translateY: -100px;
+}
+
+.drop-text-2 {
+    --duration: 1050ms;
+    --delay: 200ms;
+    --translateY: -80px;
+}
+
+.drop-text-3 {
+    --duration: 1200ms;
+    --delay: 200ms;
+    --translateY: -100px;
+}
+
+@keyframes drop-in {
+    from {
+        opacity: 0;
+        transform: translateY(var(--translateY));
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
